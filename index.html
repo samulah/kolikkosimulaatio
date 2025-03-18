@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Flip Simulation</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Coin Flip Wealth Simulation</h1>
+
+    <div class="settings">
+        <label>Starting Balance (Poor): <input type="number" id="startPoorBalance" value="10" min="1"></label>
+        <label>Starting Balance (Rich): <input type="number" id="startRichBalance" value="1000" min="1"></label>
+        <label>Number of Flips: <input type="number" id="flipLimit" value="" placeholder="Leave empty for unlimited"></label>
+    </div>
+
+    <button onclick="startSimulation()">Start Simulation</button>
+    <button onclick="stopSimulation()">Stop Simulation</button>
+
+    <canvas id="balanceChart"></canvas>
+
+    <div class="balances">
+        <p><strong>Player Poor Balance:</strong> <span id="poorBalance">100</span> €</p>
+        <p><strong>Player Rich Balance:</strong> <span id="richBalance">1000</span> €</p>
+    </div>
+    <div>
+        <p><strong>Poor Wins:</strong> <span id="poorWins">0</span></p>
+        <p><strong>Rich Wins:</strong> <span id="richWins">0</span></p>
+    </div>
+    
+    <table id="resultsTable">
+        <thead>
+            <tr>
+                <th>Flip #</th>
+                <th>Winner</th>
+                <th>Bet Size (€)</th>
+                <th>Poor Balance (€)</th>
+                <th>Rich Balance (€)</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    
+
+    <script src="chart-setup.js"></script>
+    <script src="simulation.js"></script>
+</body>
+</html>
